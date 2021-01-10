@@ -3,7 +3,8 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let methodOverride = require('method-override');
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 3001;
+
 
 let app = express();
 
@@ -18,10 +19,9 @@ app.use(methodOverride('_method'));
 // Set Handlebars as the view engine
 const Handlebars = require("handlebars");
 const template = Handlebars.compile("Name: {{name}}");
-console.log(template({ name: "Nils" }));
 
-// Import routes and give the server access to them
-var routes = require('./controllers/burgers_controller.js');
+
+let routes = require('./controllers/burger_controller.js');
 
 app.use('/', routes);
 
