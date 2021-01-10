@@ -1,11 +1,11 @@
 // Create express connection and run node server
-var express = require("express");
-var exphbs = require("express-handlebars");
-var methodOverride = require("method-override");
+let express = require("express");
+let exphbs = require("express-handlebars");
+let methodOverride = require("method-override");
 
-var PORT = process.env.PORT || 8080;
+let PORT = process.env.PORT || 8080;
 
-var app = express();
+let app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
 // This is a level of abstraction to hide credentials from user
@@ -25,8 +25,8 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-// Norm is to call it "var = routes"
-var routes = require("./controllers/burger_controller.js");
+// Norm is to call it "let = routes"
+let routes = require("./controllers/burger_controller.js");
 
 // Use express routes defined
 app.use("/", routes);
